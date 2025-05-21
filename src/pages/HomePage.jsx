@@ -1,32 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { PlusCircle, Map, HelpCircle, AlertTriangle } from 'lucide-react';
-import Header from '@/components/Header';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { PlusCircle, Map, HelpCircle, AlertTriangle } from "lucide-react";
+import Header from "@/components/Header";
 
 const HomePage = () => {
   const quickActions = [
     {
-      label: '➕ Create Report',
-      to: '/report-leak',
+      label: "➕ Create Report",
+      to: "/report-leak",
       icon: PlusCircle,
-      color: 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700',
-      description: 'Submit a new leak incident.',
+      color:
+        "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700",
+      description: "Submit a new leak incident.",
     },
     {
-      label: '🗺️ Map of Leaks',
-      to: '/map',
+      label: "🗺️ Map of Leaks",
+      to: "/map",
       icon: Map,
-      color: 'bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600',
-      description: 'View reported leaks on a map.',
+      color:
+        "bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600",
+      description: "View reported leaks on a map.",
     },
     {
-      label: '❓ Help & FAQs',
-      to: '/help',
+      label: "❓ Help & FAQs",
+      to: "/help",
       icon: HelpCircle,
-      color: 'bg-gradient-to-r from-green-500 to-lime-500 hover:from-green-600 hover:to-lime-600',
-      description: 'Find answers and support.',
+      color:
+        "bg-gradient-to-r from-green-500 to-lime-500 hover:from-green-600 hover:to-lime-600",
+      description: "Find answers and support.",
     },
   ];
 
@@ -47,7 +50,7 @@ const HomePage = () => {
       y: 0,
       opacity: 1,
       transition: {
-        type: 'spring',
+        type: "spring",
         stiffness: 100,
       },
     },
@@ -70,7 +73,8 @@ const HomePage = () => {
             </h1>
           </div>
           <p className="text-xl text-slate-300 max-w-md mx-auto">
-            Your community platform for reporting and tracking water leaks. Help us conserve water!
+            Your community platform for reporting and tracking water leaks. Help
+            us conserve water!
           </p>
         </motion.div>
 
@@ -84,7 +88,10 @@ const HomePage = () => {
             <motion.div
               key={action.label}
               variants={itemVariants}
-              whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.2)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0px 10px 20px rgba(0,0,0,0.2)",
+              }}
               whileTap={{ scale: 0.95 }}
               className="rounded-xl overflow-hidden"
             >
@@ -94,7 +101,9 @@ const HomePage = () => {
                 >
                   <action.icon className="h-12 w-12 mb-3" />
                   <span>{action.label}</span>
-                  <span className="text-sm font-normal mt-1 opacity-80">{action.description}</span>
+                  <span className="text-sm font-normal mt-1 opacity-80">
+                    {action.description}
+                  </span>
                 </Button>
               </Link>
             </motion.div>
@@ -103,7 +112,6 @@ const HomePage = () => {
       </main>
       <footer className="text-center py-8 text-slate-500 text-sm">
         <p>&copy; {new Date().getFullYear()} LeakAlert. All rights reserved.</p>
-        <p>Powered by Hostinger Horizons</p>
       </footer>
     </div>
   );
